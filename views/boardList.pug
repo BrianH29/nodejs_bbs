@@ -4,6 +4,7 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='/bbs.css')
+    script(src="https://code.jquery.com/jquery-3.5.0.js")
     title= title      
   body
     .container
@@ -16,7 +17,7 @@ html(lang='en')
             th 작성자
             th 조회수
             th 작성일
-        tbody
+        tbody#tableBody
         each post in posts
           tr
             td= post.ID
@@ -24,3 +25,9 @@ html(lang='en')
             td= post.WRITER
             td= post.VIEWS
             td= post.CREATED_AT
+      button.btn.btn-primary#bbbb test
+      p#demo 
+      
+
+  script(src='/boardList.js')
+      

@@ -4,7 +4,7 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='/bbs.css')
-    title Document
+    title= title
   body
     .outer
       br
@@ -12,25 +12,26 @@ html(lang='en')
       br
       table.table-area(align='center' border='1')
         tbody
+        each detail in details
           tr
             td(width='100') 글번호
-            td(width='500') 5
+            td(width='500')= detail.ID
           tr
             td 제목
-            td 이곳은 게시판 제목이 들어갈 자리입니다.
+            td= detail.TITLE
           tr
             td 작성자
-            td user01
+            td= detail.WRITER
           tr
             td 조회수
-            td 200
+            td= detail.VIEWS
           tr
             td 작성일
-            td 2020-10-20
+            td= detail.CREATED_AT
           tr
             td 내용
             td
-              p(style='height: 100px') 게시글 내용 들어와야 하는곳
+              p(style='height: 100px')= detail.CONTENT
       br
       table.table-area(align='center' border='1')
         tbody
