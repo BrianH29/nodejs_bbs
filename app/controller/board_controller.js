@@ -31,7 +31,6 @@ exports.findAll = async (req, res, next) => {
             }
             
             const posts = result; 
-            console.log(posts); 
             if(result.length > 0){
                 res.render('boardList', {
                     title: 'List',
@@ -43,5 +42,27 @@ exports.findAll = async (req, res, next) => {
     }catch(err){
         console.error(err);
         next(err); 
+    }
+}
+
+exports.findById = async (req, res, next) => {
+    const bno = parseInt(req.params.bno); 
+    try {
+        await Post.findById(bno, (err,result) => {
+            if(err) {
+                res.status(500).send('failed to load detail'); 
+            }
+            
+            const details = result; 
+            if(result.length>0){
+                res.render('boardDetail', {
+                    title : 'detail', 
+                    details : details
+                })
+            }
+        });
+    } catch(err) {
+        console.error(err);
+        next(err);
     }
 }

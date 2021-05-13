@@ -37,4 +37,21 @@ Post.findAll = (result) => {
     })
 }
 
+Post.findById = (bno, result) => {
+    sql.query("SELECT * FROM BOARD WHERE ID = ?", bno, (err, res) => {
+        if(err) {
+            console.error(err);
+            result(err, null);
+            return; 
+        }
+
+        if(res.length>0){
+            result(null,res);
+            return;
+        }
+
+        result({kind : 'not found'}, null);
+    })
+}
+
 module.exports = Post; 
