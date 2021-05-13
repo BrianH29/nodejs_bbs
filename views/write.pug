@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/bbs.css')
+    title Write
+  body
+  .container
+    h2 Write Board 
+    form(action='/writeContent' method='post')
+        .form-group
+          label(for='writer') Writer:
+          input#email.form-control(type='text' name='writer')
+        .form-group
+          label(for='title') title:
+          input#user.form-control(type='text' name='title')
+        .form-group
+          label(for='content') Content:
+          textarea#pwd.form-control(name='content' rows='4' cols='50') 
+        button.btn.btn-primary(type='submit') Submit
