@@ -1,0 +1,63 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    style.
+      .table-area textarea {
+      width: 100%;
+      box-sizing: border-box;
+      }
+  body
+    .outer
+      br
+      h1(align='center') 게시판상세보기
+      br
+      table.table-area(align='center' border='1')
+        tbody
+          tr
+            td(width='100') 글번호
+            td(width='500') 5
+          tr
+            td 제목
+            td 이곳은 게시판 제목이 들어갈 자리입니다.
+          tr
+            td 작성자
+            td user01
+          tr
+            td 조회수
+            td 200
+          tr
+            td 작성일
+            td 2020-10-20
+          tr
+            td 내용
+            td
+              p(style='height: 100px') 게시글 내용 들어와야 하는곳
+      br
+      table.table-area(align='center' border='1')
+        tbody
+          tr
+            th(width='100') 댓글작성
+            td(width='400')
+              textarea(rows='3' style='resize: none')
+            th(width='100')
+              button 등록
+          tr
+            td(colspan='3')
+              b 댓글(3)
+          tr
+            td admin
+            td zzzzzz 잼
+            td 2020-10-20
+          tr
+            td admin
+            td zzzzzz 잼
+            td 2020-10-20
+          tr
+            td admin
+            td zzzzzz 잼
+            td 2020-10-20
+      br
+      br
