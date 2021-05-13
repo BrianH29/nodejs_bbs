@@ -9,4 +9,6 @@ router.get('/', (req,res) => {
 
 router.post('/writeContent', post.write);
 
+router.get('/board', post.findAll);
+
 module.exports= router;

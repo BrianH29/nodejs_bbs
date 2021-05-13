@@ -4,7 +4,7 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='/bbs.css')
-    title Document      
+    title= title      
   body
     .container
       h2 Bulletin Board
@@ -17,22 +17,10 @@ html(lang='en')
             th 조회수
             th 작성일
         tbody
+        each post in posts
           tr
-            td 1
-            td 나도 이게 어떻게 되는지 잘 모글겠다 허허허허허 
-            td brian2929
-            td 23
-            td 2020-12-31
-          tr
-            td 2
-            td 나도 이게 어떻게 되는지 잘 모글겠다 허허허허허 
-            td brian2929
-            td 23
-            td 2020-12-31
-          tr
-            td 3
-            td 나도 이게 어떻게 되는지 잘 모글겠다 허허허허허 
-            td brian2929
-            td 23
-            td 2020-12-31
-    | ```
+            td= post.ID
+            td= post.TITLE
+            td= post.WRITER
+            td= post.VIEWS
+            td= post.CREATED_AT
