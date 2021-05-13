@@ -11,4 +11,6 @@ router.post('/writeContent', post.write);
 
 router.get('/board', post.findAll);
 
+router.get('/boardDetail/bno/:bno', post.findById);
+
 module.exports= router;
